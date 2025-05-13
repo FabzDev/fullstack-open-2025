@@ -27,11 +27,13 @@ function App() {
       <Button text="Bad" handleOnClick={handleOnClick(setBad)}/>
       
       <h1>Statistics</h1>
-      <Statistics name="Good" value={good}/>
-      <Statistics name="Neutral" value={neutral}/>
-      <Statistics name="Bad" value={bad}/>
-      <Statistics name="All" value={good + neutral + bad}/>
-      <Positive good={good} all={all}/>
+      
+      {all==0 && <h2>No Feedback Given</h2>}
+      {all>0 && <Statistics name="Good" value={good}/>}
+      {all>0 && <Statistics name="Neutral" value={neutral}/>}
+      {all>0 && <Statistics name="Bad" value={bad}/>}
+      {all>0 && <Statistics name="All" value={good + neutral + bad}/>}
+      {all>0 && <Positive good={good} all={all}/>}
 
     </>
   )
