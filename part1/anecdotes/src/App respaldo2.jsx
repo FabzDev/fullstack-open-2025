@@ -13,16 +13,7 @@ const App = () => {
   ];
 
   const [selected, setSelected] = useState(0);
-  const [votes, setVotes] = useState({
-    0:0,
-    1:0,
-    2:0,
-    3:0,
-    4:0,
-    5:0,
-    6:0,
-    7:0,
-  });
+  const [votes, setVotes] = useState([0,0,0,0,0,0,0,0]);
 
   const changeAnectote = () => {
     const calcAnecdote = Math.floor(Math.random() * anecdotes.length);
@@ -30,9 +21,8 @@ const App = () => {
   };
 
   const addVote = (sel) => {
-    const newVotes = {...votes};
+    const newVotes = [...votes];
     newVotes[sel] += 1;
-    console.log(newVotes);
     setVotes(newVotes);
   };
 
