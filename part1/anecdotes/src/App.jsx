@@ -57,7 +57,7 @@ const App = () => {
     <>
       <h1>Anecdote of the day</h1>
       <div>{anecdotes[selected]}</div>
-      <div>has {votes[selected]} votes</div>
+      <p>has {votes[selected]} votes</p>
       <button
         onClick={() => {
           addVote(selected);
@@ -68,7 +68,7 @@ const App = () => {
       <button onClick={() => changeAnectote()}>Next Anecdote</button>
 
       <h2>Anecdote with most votes:</h2>
-      <h4>{anecdotes[popular]}</h4>
+      <p>{anecdotes[popular]}</p>
     </>
   );
 };
